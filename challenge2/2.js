@@ -47,6 +47,18 @@ function manufacture(gifts, materials) {
 
 console.log(manufacture(gifts, materials));
 
+//otra manera:
+/*  const manufacture = (gifts, materials) => {
+        const manufacturable =  gifts.filter(g => {
+            for (const letter in g) {
+                if (!materials.includes(g[letter])) {
+                    return false;
+                }
+            }
+            return true;
+        });
+        console.log(manufacturable);
+}*/
 
 //.at(index)
 const word = "hello";
