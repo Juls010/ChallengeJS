@@ -9,7 +9,7 @@
 //  ⭐   🎅      🦌
 
 // Llamada a la función
-treeHeight(tree)
+//treeHeight(tree)
 // Devuelve: 3
 
 /**
@@ -43,13 +43,15 @@ const tree = {
     }
 };
 
-function treeHeight(tree) {
-    if(tree){
-        const leftHeight = treeHeight(tree.left);
-        const rightHeigth = treeHeight(tree.right);
-        return 1 + Math.max(leftHeight,rightHeigth); 
-    }  
-    return 0;
-}
 
 console.log(treeHeight(tree));
+
+function treeHeight(tree) {
+    if (tree) {
+        const leftHeight = treeHeight(tree.left);
+        const rightHeight = treeHeight(tree.right);
+        return 1 + Math.max(leftHeight, rightHeight);
+    } else {
+        return 0;
+    }
+}

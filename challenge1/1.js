@@ -27,15 +27,6 @@ const listaOvejas = [{
     color: "roja"
 }];
 
-/*function ovejasRojas(){
-    const ovejasRojas = [];
-    listaOvejas.forEach(color => {
-        if(listaOvejas.color === "roja" && listaOvejas.nombre.include("n", "a")){
-            ovejasRojas.push(color);
-        }
-    })
-    console.log(ovejasRojas);
-}*/
 
 const ovejasFiltradas = filtrarOvejas(listaOvejas);
 console.log(ovejasFiltradas);
