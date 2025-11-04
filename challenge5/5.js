@@ -21,7 +21,7 @@ Notas:
 Las cadenas de entrada siempre estarán bien formadas con paréntesis que coinciden correctamente, no necesitas validarlos.
 En el mensaje final no deben quedar paréntesis.
 El nivel máximo de anidamiento es 2. */
-
+/*
 const c = decode('sa(u(cla)atn)s')
 console.log(c) // santaclaus
 
@@ -40,5 +40,21 @@ function decode(cadena) {
         }
     }
     return cadenaNueva[0];
+}*/
+
+function decode(message){
+    while(message.includes('(')) {
+        message = message.replace(/\(([^()]*))/g, (match, content) => {  //g significa global
+            return content.split('').reverse().join('');
+        }) 
+    }
+    return message;
 }
 
+//  ->   \( el caracter ( literal escapando porque ( tiene significado especial en regex
+//  ->   ( grupo de captura - guarda lo que coincide dentro
+//  ->   [^()] cualquier caracter excepto ( y )
+//  ->   * cero o mas veces
+//  ->   ) cierra el grupo de captura
+//  ->  /) el caracter ) literal
+//  ->  g global busca todas las coincidencias, no solo la primera
